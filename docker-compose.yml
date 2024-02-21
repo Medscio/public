@@ -1,0 +1,22 @@
+version: '3'
+services:    
+  graphdb:
+    container_name: graphdb
+    image: ontotext/graphdb:10.5.1
+    ports: 
+    - "7200:7200"
+    healthcheck:
+      test: ["CMD", "curl", "-G", "http://graphdb:7200/rest/repositories", "-H" ,"Accept: application/json"]
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  app:
+    container_name: app
+    image: medscio.azurecr.io/omop/medscio-app:0.1
+    ports:
+    - "5001:5001"
+    depends_on:
+      graphdb:
+        condition: service_healthy
