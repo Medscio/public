@@ -16,7 +16,7 @@ services:
     container_name: app
     image: medscio.azurecr.io/omop/medscio-app:0.2
     ports:
-    - "5001:5001"
+    - "5555:5555"
     depends_on:
       graphdb:
         condition: service_healthy
