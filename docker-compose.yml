@@ -14,7 +14,7 @@ services:
 
   app:
     container_name: app
-    image: medscio.azurecr.io/omop/medscio-app:0.6
+    image: medscio.azurecr.io/omop/medscio-app:0.7
     ports:
     - "5556:5556"
     depends_on:
