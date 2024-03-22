@@ -1,0 +1,1 @@
+sudo docker cp $(sudo docker ps --filter name=app -q):/app/results results
