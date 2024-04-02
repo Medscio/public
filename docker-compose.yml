@@ -14,9 +14,16 @@ services:
 
   app:
     container_name: app
-    image: medscio.azurecr.io/omop/medscio-app:0.9.1
+    image: medscio.azurecr.io/omop/medscio-app:0.9.2
     ports:
     - "5555:5555"
     depends_on:
       graphdb:
         condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: "4G"
+        reservations:
+          memory: "128M"
+    memswap_limit: -1
