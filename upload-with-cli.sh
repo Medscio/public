@@ -3,7 +3,7 @@ start_time=$(date +%s)
 start_date=$(date +"%Y-%m-%d %H:%M:%S")
 echo "Start Time: $start_date"
 
-curl -X POST -F labuitslag=@labuitslag.csv -F medicatie_toediening=@medicatie_toediening.csv -F medische_diagnose=@medische_diagnose.csv -F opnametraject=@opnametraject.csv "127.0.0.1:5555/upload-files-cli"
+curl -X POST "127.0.0.1:5555/upload-files-cli"
 
 end_time=$(date +%s)
 
