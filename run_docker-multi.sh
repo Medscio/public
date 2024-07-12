@@ -10,4 +10,4 @@ sudo az login -u amsterdamumc@medscio.nl -p "$PASSWORD"
 sudo az acr login --name medscio
 
 # Start Docker Compose
-sudo docker-compose -f docker-compose-multi.yml up --force-recreate
+sudo docker-compose -f docker-compose-multi.yml up -d --force-recreate
