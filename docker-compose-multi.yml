@@ -21,6 +21,6 @@ services:
       graphdb:
         condition: service_healthy
     volumes:
-      - ./input-data:/app/input-data
-      - ./output-data:/app/output-data
+      - ./data-input:/app/data-input
+      - ./data-output:/app/data-output
       - /mnt/ttl:/ttl
